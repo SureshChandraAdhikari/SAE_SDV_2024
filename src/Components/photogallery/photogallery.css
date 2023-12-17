@@ -1,0 +1,37 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+#body{
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.photos{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1vh;
+    margin-inline: auto;
+    max-width: 100rem;
+    background: #fffff2;
+    padding: 1vh;
+    margin-top: 2%;
+}
+
+ .photos> img{
+    width: 100%;
+    aspect-ratio: 1 / 1;/*height:width*/
+    object-fit: cover;/*Ensures the image fills the available space:*/
+    transition: all 0.5s ease;
+}
+
+.photos:has(img:hover) img:not(:hover) {
+    scale: 0.8;
+    opacity: 0.5;
+    filter: grayscale(70%);
+}

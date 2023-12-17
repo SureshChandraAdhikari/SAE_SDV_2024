@@ -2,17 +2,20 @@
 body {
 	background-color: #000;
   }
-  
+  .btnav{
+    margin-top: 10%;
+	
+  }
   .bottom-nav {
 	width: 50%;
-	position: fixed;
+	position: relative;
 	bottom: 0px;
 	left: 25%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: #fff;
-	margin: 0px;
+	margin-bottom:1px;
 	border-radius: 20px 20px 0px 0px;
 	padding: 30px 0px 15px;
 	box-shadow: 0px 8px 10px rgba(130, 43, 97, 0.19);
@@ -85,4 +88,7 @@ body {
 	  width: 100%;
 	  left: 0;
 	}
+    .btnav{
+        margin-top: 8%;
+      }
   }

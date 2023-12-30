@@ -1,57 +1,62 @@
-import React from "react";
-import "./Bottomnavbar.css"
-import { library } from '@fortawesome/fontawesome-svg-core'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './Bottomnavbar.css'; // Make sure your CSS file path is correct
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fas,fa } from '@fortawesome/free-solid-svg-icons'
-import $ from 'jquery';
-import { ready } from "jquery";
-import { Link } from "react-router-dom";
-library.add(fas);//this is key to add fas icons in react
+import { faCheckSquare } from '@fortawesome/free-solid-svg-icons'; // Import individual icons
 
-$(document).ready(function () {
-    $('.bottom-nav li a').click(function(){
-        var position = $(this).position();
-        var margin = 37;
-        $('.slider').css({"left":+position.left+margin ,  "transform": "translateX(-50%)"});
-        $('.bottom-nav li a').removeClass('active-icon');
-        $(this).addClass('active-icon');
-    });
-});
+const BottomNavb = () => {
+  const [activeItem, setActiveItem] = useState(null);
 
-const BottomNavb=()=>{
-    return(
-    <div className="btnav">
-        <ul className="bottom-nav">
-            <div className="slider"></div>
-            <li>
-                <Link to='/components'>
-                <FontAwesomeIcon icon="fa-solid fa-gears" style={{color: "#713375",height:"22px"}} />
-                </Link>
-            </li>
-            <li>
-                <Link to='/Gallery'>
-                <FontAwesomeIcon icon="fa-solid fa-image" style={{color: "#713375",height:"22px"}} />
-                </Link>
-            </li>
-            <li>
-                <Link to='/'>
-                <FontAwesomeIcon icon="fa-solid fa-house" style={{color: "#71336f",height:"22px"}} />
-                </Link>
-            </li>
-            <li >
-                  <Link to='/Teams'>
-                <FontAwesomeIcon icon="fa-solid fa-users" style={{color: "#713375",height:"22px"}} />
-                </Link>
-            </li>
-            <li>
-                <Link to='/About'>
-                <FontAwesomeIcon icon="fa-solid fa-circle-question" style={{color: "#713375",height:"22px"}} />
-                </Link>
-            </li>
-           
-        </ul>
-     </div>
-       
-    )
-}
+  const handleItemClick = (position) => {
+    const margin = 37;
+    const containerWidth = document.querySelector('.bottom-nav').getBoundingClientRect().width;
+    const maxLeftPosition = containerWidth - 50; // Assuming slider width is 50px
+    const left = Math.min(position.left + margin, maxLeftPosition);
+    setActiveItem(left);
+  };
+
+  return (
+    <div>
+      <ul className="bottom-nav">
+        <div className="slider" style={{ left: activeItem }}></div>
+        <li>
+          <Link to="/" onClick={(e) => handleItemClick(e.target.getBoundingClientRect())}>
+            <FontAwesomeIcon icon={faCheckSquare} />
+            <span>Home</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/About" onClick={(e) => handleItemClick(e.target.getBoundingClientRect())}>
+            <FontAwesomeIcon icon={faCheckSquare} />
+            <span>About</span>
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/components"
+            className={activeItem === null ? 'active-icon' : ''}
+            onClick={(e) => handleItemClick(e.target.getBoundingClientRect())}
+          >
+            <FontAwesomeIcon icon={faCheckSquare} />
+            <span>Components</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/Gallery" onClick={(e) => handleItemClick(e.target.getBoundingClientRect())}>
+            <FontAwesomeIcon icon={faCheckSquare} />
+            <span>Gallery</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/Team" onClick={(e) => handleItemClick(e.target.getBoundingClientRect())}>
+            <FontAwesomeIcon icon={faCheckSquare} />
+            <span>Team</span>
+          </Link>
+        </li>
+        
+      </ul>
+    </div>
+  );
+};
+
 export default BottomNavb;

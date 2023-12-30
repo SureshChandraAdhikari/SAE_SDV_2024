@@ -12,21 +12,21 @@
   
   
   .footer {
-      background-color: #004658;
+      background-color:#00ADB5;
       color: #fff;
   }
   .footer-wave-svg {
       background-color: transparent;
       display: block;
-      height: 30px;
+      height: 40px;
       position: relative;
       top: -1px;
       width: 100%;
   }
   .footer-wave-path {
-      fill: #ffffff;
+      fill: #fffff2;
   }
-  
+
   .footer-content {
       margin-left: auto;
       margin-right: auto;
@@ -45,7 +45,7 @@
   }
   
   .footer-content-column ul li a {
-    color: #fff;
+    color: #393E46;
     text-decoration: none;
   }
   
@@ -55,7 +55,13 @@
   .footer-menu {
       margin-top: 30px;
   }
-  
+  #menu-get-started{
+    display: flex;
+    flex-direction: row;
+  }
+  .menu-item{
+   margin: 30px;
+  }
   .footer-menu-name {
       color: #fffff2;
       font-size: 15px;
@@ -75,7 +81,9 @@
   .footer-menu-list li {
       margin-top: 5px;
   }
-  
+  .classic{
+    margin: 5px;
+  }
   .footer-call-to-action-description {
       color: #fffff2;
       margin-top: 10px;
@@ -83,14 +91,15 @@
   }
   .footer-call-to-action-button:hover {
       background-color: #fffff2;
-      color: #00bef0;
+      color:#222831;
+      margin-top: 20px;
   }
   .button:last-of-type {
       margin-right: 0;
   }
   .footer-call-to-action-button {
-      background-color: #027b9a;
-      border-radius: 21px;
+      background-color:black;
+      border-radius: 20px;
       color: #fffff2;
       display: inline-block;
       font-size: 11px;
@@ -104,9 +113,12 @@
       transition: background-color .2s;
       cursor: pointer;
       position: relative;
+      margin-top: 50px;
   }
   .footer-call-to-action {
-      margin-top: 30px;
+      margin-top: 5px;
+      width:300px;
+      margin-left: 20px;
   }
   .footer-call-to-action-title {
       color: #fffff2;
@@ -151,14 +163,14 @@
   }
   
   .footer-social-amoeba-path {
-      fill: #027b9a;
+      fill:#00ADB5;
   }
   
   .footer-social-link.linkedin {
-      height: 26px;
-      left: 3px;
-      top: 11px;
-      width: 26px;
+      height: 46px;
+      left: 4px;
+      top: 9px;
+      width: 46px;
   }
   
   .footer-social-link {
@@ -191,28 +203,28 @@
   }
   
   .footer-social-link.twitter {
-      height: 28px;
-      left: 62px;
-      top: 3px;
-      width: 28px;
+      height: 46px;
+      left: 64px;
+      top: 8px;
+      width: 46px;
   }
   
   .footer-social-link.youtube {
-      height: 24px;
+      height: 46px;
       left: 123px;
       top: 12px;
-      width: 24px;
+      width: 46px;
   }
   
   .footer-social-link.github {
-      height: 34px;
+      height: 46px;
       left: 172px;
       top: 7px;
-      width: 34px;
+      width: 46px;
   }
   
   .footer-copyright {
-      background-color: #027b9a;
+      background-color: #00ADB5;
       color: #fff;
       padding: 15px 30px;
     text-align: center;
@@ -252,6 +264,10 @@
       max-width: 1230px;
       padding: 40px 15px 1050px;
       position: relative;
+   
+    }
+    .classic{
+        margin: 2px;
     }
   }
   @media (min-width:480px) and (max-width:599px)  { /* smartphones, Android phones, landscape iPhone */
@@ -261,6 +277,17 @@
       max-width: 1230px;
       padding: 40px 15px 1050px;
       position: relative;
+     
+    }
+    .classic{
+        margin: 2px;
+    }
+  }
+  @media (min-width:200px) and (max-width:395px) {
+    .footer-call-to-action {
+        margin-top: 5px;
+        width: 250px;
+        margin-left: 20px;
     }
   }
   @media (min-width:600px) and (max-width: 800px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
@@ -270,16 +297,26 @@
       max-width: 1230px;
       padding: 40px 15px 1050px;
       position: relative;
+     
+    }
+    .classic{
+        margin: 2px;
     }
   }
   @media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
-  
+    .classic{
+        margin: 2px;
+    }
   }
   @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
-  
+    .classic{
+        margin: 2px;
+    }
   }
   @media (min-width:1281px) { /* hi-res laptops and desktops */
-  
+    .classic{
+        margin: 2px;
+    }
   }
   
   
@@ -287,11 +324,12 @@
   
   @media (min-width: 760px) {
     .footer-content {
-        margin-left: auto;
+        margin-left: 70px;
         margin-right: auto;
-        max-width: 1230px;
+        max-width: 100%;
         padding: 40px 15px 450px;
         position: relative;
+       
     }
   
     .footer-wave-svg {
@@ -301,10 +339,18 @@
     .footer-content-column {
         width: 24.99%;
     }
+    .classic{
+        margin: 2px;
+    }
   }
   @media (min-width: 568px) {
+.hello{
+    margin-left: 2px;
+}
+
     /* .footer-content-column {
         width: 49.99%;
     } */
   }
+  
   
